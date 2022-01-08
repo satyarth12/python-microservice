@@ -5,9 +5,15 @@ name = "pypi"
 
 [packages]
 django = "*"
+djangorestframework = "*"
+django-cors-headers = "*"
+mysqlclient = "*"
+django-mysql = "*"
+pika = "*"
 
 [dev-packages]
 flake8 = "*"
+autopep8 = "*"
 
 [requires]
 python_version = "3.9"
