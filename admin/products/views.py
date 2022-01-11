@@ -1,8 +1,11 @@
 from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-from products.models import Products
+from products.models import Products, User
 from products.serializers import ProductSerializer
 
+import random
 # Create your views here.
 
 
@@ -24,3 +27,12 @@ class ProductViewSet(viewsets.ModelViewSet):
 
     # def delete(self, request, pk=None):
     #     pass
+
+
+class UserAPIView(APIView):
+    def get(self, _):
+        users = User.objects.all()
+        user = random.choice(users)
+        return Response({
+            'id': user.id
+        })
