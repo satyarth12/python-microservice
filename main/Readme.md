@@ -22,9 +22,9 @@ docker-compose up
     - Migrating/Upgrading the model's schema to mysql's table
 ```
 docker-compose exec backend sh
-docker-compose db --help
-docker-compose db init
-docker-compose db migrate
-docker-compose db upgrade
+python manager.py db --help
+python manager.py db init
+python manager.py db migrate
+python manager.py db upgrade
 ```
  
