@@ -13,6 +13,7 @@ pipenv install -r requirements.txt
 Running server on Docker & Accessing Docker shell
 ```
 docker-compose up
+docker-compose up --build
 ```
 - Commands listed below are for:
     - accessing the docker shell

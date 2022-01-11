@@ -17,6 +17,7 @@ channel.queue_declare(queue="main")
 
 
 def callback(chnl, method, properties, body):
+    print("RECEIVED IB MAIN")
     data = json.loads(body)
     print(data)
 
@@ -25,17 +26,20 @@ def callback(chnl, method, properties, body):
             id=data['id'], title=data['title'], image=data['image'])
         db.session.add(product)
         db.session.commit()
+        print('product created')
 
-    elif properties.content_type == 'product_created':
+    elif properties.content_type == 'product_updated':
         product = Product.query.get(data['id'])
         product.title = data['title']
         product.image = data['image']
         db.session.commit()
+        print('product updated')
 
     elif properties.content_type == 'product_deleted':
         product = Product.query.get(data)
         db.session.delete(product)
         db.session.commit()
+        print('product deleted')
 
 
 # consuming the data packets sent by the producer
