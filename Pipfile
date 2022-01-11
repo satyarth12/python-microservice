@@ -10,6 +10,13 @@ django-cors-headers = "*"
 mysqlclient = "*"
 django-mysql = "*"
 pika = "*"
+requests = "*"
+flask = "*"
+flask-sqlalchemy = "*"
+sqlalchemy = "*"
+flask-migrate = "*"
+flask-script = "*"
+flask-cors = "*"
 
 [dev-packages]
 flake8 = "*"
