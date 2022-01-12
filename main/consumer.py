@@ -6,9 +6,10 @@ import pika  # for sending events to RabbitMQ
 import json
 
 from main import Product, db
+from vars import AMPQ_BROKER_URL
 
 params = pika.URLParameters(
-    "amqps://lvhcfubi:aZ3GVvZLrrjG3ufYnh1nqN1KsK9bpZJp@puffin.rmq2.cloudamqp.com/lvhcfubi")
+    AMPQ_BROKER_URL)
 
 connection = pika.BlockingConnection(parameters=params)
 

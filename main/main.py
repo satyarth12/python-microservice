@@ -10,9 +10,11 @@ from sqlalchemy import UniqueConstraint
 import requests
 
 from producer import publish
+from vars import DB_URI
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:root@db/main'
+print(DB_URI)
+app.config["SQLALCHEMY_DATABASE_URI"] = DB_URI
 CORS(app)
 
 db = SQLAlchemy(app)
