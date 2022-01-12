@@ -1,8 +1,9 @@
 import pika  # for sending events to RabbitMQ
 import json
+from django.conf import settings
 
 params = pika.URLParameters(
-    "amqps://lvhcfubi:aZ3GVvZLrrjG3ufYnh1nqN1KsK9bpZJp@puffin.rmq2.cloudamqp.com/lvhcfubi")
+    settings.AMPQ_BROKER_URL)
 
 connection = pika.BlockingConnection(parameters=params)
 

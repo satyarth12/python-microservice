@@ -11,16 +11,25 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Loading dotenv values
+load_dotenv()
+env_path = Path('.')/'.env'
+load_dotenv(dotenv_path=env_path)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(4!xwh#_y8l1e%w^-*zqd!h529-l!%7cy2=0_lixoxuxk7$ig+'
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+# AMPQ Broker
+AMPQ_BROKER_URL = os.getenv("AMPQ_BROKER")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
