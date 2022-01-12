@@ -1,6 +1,6 @@
 # Python Microservice Architecture
-> This is a mini yet important project to understand the fundamentals of a microservice application.
-> Tech Stacks Used are:
+    > This is a mini yet important project to understand the fundamentals of a microservice application.
+    > Tech Stacks Used are:
 
     -   **Django Framework**: Django along with Django Rest-Framework were used to make the admin microservice (out of two microservices).
             Django helped in rapid development and clean, pragmatic design, eventually helped in setting up the admin APIs to manage the dashboard side.
