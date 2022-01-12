@@ -10,8 +10,8 @@ channel = connection.channel()  # creating channel
 
 
 def publish(method, body):
-    """Publishing ampq channel connection with main microservice's consumer"""
+    """Publishing ampq channel connection with admin microservice's consumer"""
 
     properties = pika.BasicProperties(method)
-    channel.basic_publish(exchange="", routing_key="main",
+    channel.basic_publish(exchange="", routing_key="admin",
                           body=json.dumps(body), properties=properties)

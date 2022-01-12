@@ -21,6 +21,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        print("IN create")
         publish(method="product_created", body=serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 

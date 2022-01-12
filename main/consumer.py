@@ -1,10 +1,11 @@
 """Consumer code for the main microservice
+which it receives from admin app's microservice
 """
 
 import pika  # for sending events to RabbitMQ
 import json
 
-from main.main import Product, ProductUser, db
+from main import Product, db
 
 params = pika.URLParameters(
     "amqps://lvhcfubi:aZ3GVvZLrrjG3ufYnh1nqN1KsK9bpZJp@puffin.rmq2.cloudamqp.com/lvhcfubi")
@@ -17,7 +18,7 @@ channel.queue_declare(queue="main")
 
 
 def callback(chnl, method, properties, body):
-    print("RECEIVED IB MAIN")
+    print("RECEIVED IN MAIN")
     data = json.loads(body)
     print(data)
 
